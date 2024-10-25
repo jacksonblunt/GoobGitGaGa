@@ -1,4 +1,6 @@
-# Jackson Blunt, Nilansh Ghosh, Mario Handal
+#
+# Group Members: Jackson Blunt, Nilansh Ghosh, Mario Handal
+#
 
 from tkinter import * # tkinter is a GUI library built-in to python
 import tellopy # for tello drone application programmer interface (API)
@@ -28,25 +30,33 @@ root = None
 def square(drone):
     print('square code here')
     # TODO: add your square code here
+
+    # forward
     drone.forward(20)
     sleep(3)
     drone.forward(0)
     sleep(3)
+
+    # to the right
     drone.right(20)
     sleep(3)
     drone.right(0)
     sleep(3)
+
+    # backwards
     drone.backward(20)
     sleep(3)
     drone.backward(0)
     sleep(3)
+
+    # to the left
     drone.left(20)
     sleep(3)
     drone.left(0)    
     sleep(3)
     drone.land()
 
-#Tested in class on 10/25 and mostly worked
+#Tested in class on 10/25 and approved by professor
 
 # function that when called has the Tello trace a cube
 # this will be called like cube(drone), and this function is 
@@ -62,34 +72,42 @@ def cube(drone):
     sleep(3)
     drone.forward(0)
     sleep(3)
+    
     drone.right(20)
     sleep(3)
     drone.right(0)
     sleep(3)
+    
     drone.backward(20)
     sleep(3)
     drone.backward(0)
     sleep(3)
+    
     drone.left(20)
     sleep(3)
     drone.left(0)    
     sleep(3)
+    
     drone.up(20)
     sleep(3)
     drone.up(0)
     sleep(3)
+    
     drone.forward(20)
     sleep(3)
     drone.forward(0)
     sleep(3)
+    
     drone.right(20)
     sleep(3)
     drone.right(0)
     sleep(3)
+    
     drone.backward(20)
     sleep(3)
     drone.backward(0)
     sleep(3)
+    
     drone.left(20)
     sleep(3)
     drone.left(0)    
@@ -111,17 +129,22 @@ def triangle(drone):
     drone.forward(10)
     drone.right(10)
     sleep(3)
+    
     drone.forward(0)
     drone.right(0)
     sleep(3)
+    
     drone.backward(10)
     drone.right(10)
     sleep(3)
+    
     drone.backward(0)
     drone.right(0)
     sleep(3)
+    
     drone.left(14)
     sleep(3)
+    
     drone.left(0)
     sleep(3)
 
@@ -140,6 +163,7 @@ def circle(drone):
 
     #Untested but should make 64 course adjustments and trace somethng circular of an unknown radius. 
     for i in range(64):
+        
         xVel = 10 * math.cos(i * ((2 * math.pi) / 64))
         yVel = 10 * math.sin(i * ((2 * math.pi) / 64))
 
