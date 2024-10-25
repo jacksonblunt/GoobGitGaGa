@@ -15,7 +15,25 @@ root = None
 #
 # Submit your group's code (only 1 person in the group needs to submit)
 # in Brightspace under Assignments -> Group Project
+def moveStop(drone):
+    sleep(3)
+    drone.forward(0)
+    drone.backward(0)
+    drone.right(0)
+    drone.left(0)
+    drone.up(0)
+    drone.down(0)
+    sleep(3)
 
+def halfSquare(drone, vel):
+    drone.forward(vel)
+    drone.moveStop()
+    drone.right(vel)
+    drone.moveStop()
+    drone.backward(vel)
+    drone.moveStop()
+    drone.left(vel)
+    drone.moveStop()    
 
 # function that when called has the Tello trace a square
 # this will be called like square(drone), and this function is 
@@ -27,6 +45,11 @@ root = None
 def square(drone):
     print('square code here')
     # TODO: add your square code here
+    drone.halfSquare(10)
+    sleep(3)
+    drone.land()
+    drone.moveStop(10)
+
 
 # function that when called has the Tello trace a cube
 # this will be called like cube(drone), and this function is 
@@ -38,6 +61,14 @@ def square(drone):
 def cube(drone):
     print('cube code here')
     # TODO: add your cube code here
+    drone.halfSquare(10)
+    drone.up(10)
+    drone.moveStop()
+    drone.halfSquare(10)
+    
+    drone.land()
+    drone.moveStop()
+    
 
 # function that when called has the Tello trace a triangle
 # this will be called like triangle(drone), and this function is 
@@ -49,7 +80,18 @@ def cube(drone):
 def triangle(drone):
     print('triangle code here')
     # TODO: add your triangle code here
+    drone.forward(10)
+    drone.right(10)
+    drone.moveStop()
+    drone.backward(10)
+    drone.right(10)
+    drone.moveStop()
+    drone.left(10)
+    drone.moveStop()
+    sleep(3)
 
+    drone.land()
+    drone.moveStop()
 # function that when called has the Tello trace a circle
 # this will be called like circle(drone), and this function is 
 # called when the "Draw circle" button is pressed under 
